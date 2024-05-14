@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const validator = require("validator");
+const toJSON = require("./plugins/toJson");
 
 const userSchema = new mongoose.Schema(
   {
@@ -43,6 +44,9 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// Apply the toJSON plugin to the user schema
+userSchema.plugin(toJSON);
 
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {

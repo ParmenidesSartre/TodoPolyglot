@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const toJSON = require("./plugins/toJson");
 
 const todoSchema = new mongoose.Schema(
   {
@@ -44,6 +45,9 @@ const todoSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// Apply the toJSON plugin to the todo schema
+todoSchema.plugin(toJSON);
 
 const Todo = mongoose.model("Todo", todoSchema);
 
