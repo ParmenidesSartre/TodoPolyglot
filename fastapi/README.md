@@ -1,5 +1,3 @@
-Here is a simple README on how to set up and run the FastAPI application with the provided code:
-
 # FastAPI Todo Application
 
 This is a simple Todo application built using FastAPI, SQLAlchemy, and Pydantic. The application includes endpoints for creating and reading todo items, with user authentication and authorization implemented using JWT tokens.
